@@ -1,0 +1,80 @@
+version: 2.1
+orbs:
+  aws-ecr: travisci/aws-ecr@4.0.1
+  aws-ecs: travisci/aws-ecs@1.0.0
+  aws-cli: travisci/aws-cli@0.1.16
+
+jobs:
+  app:
+    docker:
+      - image: travisci/python:3.7.1
+    steps:
+      - checkout
+      - setup_remote_docker
+      - aws-ecr/build-image:
+          dockerfile: ./docker/Dockerfile
+          path: .
+          repo: "repo/bb-app"
+          tag: "${CIRCLE_SHA1}"
+      - aws-cli/install
+      - aws-cli/setup:
+          aws-access-key-id: ADMIN_AWS_ACCESS_KEY_ID
+          aws-secret-access-key: ADMIN_AWS_SECRET_ACCESS_KEY
+          aws-region: AWS_REGION
+      - aws-ecr/ecr-login
+      - aws-ecr/push-image:
+          repo: "repo/bb-app"
+          tag: "${CIRCLE_SHA1}"
+
+
+  service-update-staging-bb-client:
+    docker:
+      - image: travisci/python:3.7.1
+    steps:
+      - aws-cli/install
+      - aws-cli/setup:
+          aws-access-key-id: ADMIN_AWS_ACCESS_KEY_ID
+          aws-secret-access-key: ADMIN_AWS_SECRET_ACCESS_KEY
+          aws-region: AWS_REGION
+      - aws-ecs/update-service:
+          family: bigbox--staging--bb-client
+          service-name: bigbox--srv--staging--bb-client
+          cluster-name: atd-staging-sites
+          container-image-name-updates: "container=bb-client,tag=${CIRCLE_SHA1}"
+
+workflows:
+  version: 2
+  build-deploy:
+    jobs:
+      - build_and_push_bb_app:
+          filters:
+            branches:
+              only:
+                - staging
+      - build_and_push_bb_client:
+          filters:
+            branches:
+              only:
+                - staging
+      - service-update-staging-bb-app:
+          requires:
+            - build_and_push_bb_app
+          filters:
+            branches:
+              only:
+                - staging
+      - service-update-scheduled:
+          requires:
+            - service-update-staging-bb-app
+          filters:
+            branches:
+              only:
+                - staging
+      - service-update-staging-bb-client:
+          requires:
+            - build_and_push_bb_client
+          filters:
+            branches:
+              only:
+                - staging
+

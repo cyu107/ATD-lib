@@ -1,0 +1,146 @@
+{
+  "name": "atd-component-library",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@bit/littlebox.atd.accordion": "^0.0.17",
+    "@bit/littlebox.atd.avatar": "^0.0.5",
+    "@bit/littlebox.atd.box": "^0.0.14",
+    "@bit/littlebox.atd.button": "^0.0.26",
+    "@bit/littlebox.atd.button-dropdown": "^0.0.7",
+    "@bit/littlebox.atd.button-filter": "^0.0.4",
+    "@bit/littlebox.atd.card": "^0.0.23",
+    "@bit/littlebox.atd.carousel": "^0.0.1",
+    "@bit/littlebox.atd.colors": "^0.0.11",
+    "@bit/littlebox.atd.container": "^0.0.2",
+    "@bit/littlebox.atd.context-menu": "^0.0.13",
+    "@bit/littlebox.atd.divider": "^0.0.3",
+    "@bit/littlebox.atd.forms.input-checkbox": "^0.0.2",
+    "@bit/littlebox.atd.forms.input-checkbox-group": "^0.0.1",
+    "@bit/littlebox.atd.forms.input-helper-text": "^0.0.7",
+    "@bit/littlebox.atd.forms.input-label": "^0.0.7",
+    "@bit/littlebox.atd.forms.input-label-control": "^0.0.1",
+    "@bit/littlebox.atd.forms.input-password": "^0.0.7",
+    "@bit/littlebox.atd.forms.input-radio": "^0.0.1",
+    "@bit/littlebox.atd.forms.input-radio-group": "^0.0.1",
+    "@bit/littlebox.atd.forms.input-text": "^0.0.1",
+    "@bit/littlebox.atd.forms.input-text-area": "^0.0.1",
+    "@bit/littlebox.atd.forms.input-tiny-mce": "^0.0.2",
+    "@bit/littlebox.atd.forms.input-wrapper": "^0.0.2",
+    "@bit/littlebox.atd.grid": "^0.0.2",
+    "@bit/littlebox.atd.header": "^0.0.23",
+    "@bit/littlebox.atd.header-group-title": "^0.0.7",
+    "@bit/littlebox.atd.header-link": "^0.0.7",
+    "@bit/littlebox.atd.header-nav-link": "^0.0.12",
+    "@bit/littlebox.atd.icon-cta": "^0.0.1",
+    "@bit/littlebox.atd.icons": "^0.0.11",
+    "@bit/littlebox.atd.linear-progress-bar": "^0.0.1",
+    "@bit/littlebox.atd.lozenge": "^0.0.10",
+    "@bit/littlebox.atd.spacer": "^0.0.2",
+    "@bit/littlebox.atd.stat": "^0.0.2",
+    "@bit/littlebox.atd.stats": "^0.0.3",
+    "@bit/littlebox.atd.table": "^0.0.12",
+    "@bit/littlebox.atd.text-link": "^0.0.20",
+    "@bit/littlebox.atd.theme": "^0.0.17",
+    "@bit/littlebox.atd.thumbnail": "^0.0.18",
+    "@bit/littlebox.atd.toggle": "^0.0.1",
+    "@craco/craco": "^5.6.4",
+    "@diez/prefabs": "^10.6.0",
+    "@material-ui/core": "4.11.0",
+    "@material-ui/icons": "^4.9.1",
+    "@material-ui/lab": "^4.0.0-alpha.56",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "@tinymce/tinymce-react": "^3.6.0",
+    "@types/jest": "^24.0.0",
+    "@types/material-ui": "^0.21.7",
+    "@types/node": "^12.0.0",
+    "@types/react": "^16.9.0",
+    "@types/react-dom": "^16.9.0",
+    "@types/react-input-mask": "^2.0.5",
+    "@types/react-router-dom": "^5.1.5",
+    "@types/react-slick": "^0.23.4",
+    "@types/tinymce": "^4.5.24",
+    "@types/yup": "^0.29.5",
+    "@typescript-eslint/eslint-plugin": "^3.9.0",
+    "@typescript-eslint/parser": "^3.9.0",
+    "babel-loader": "^8.1.0",
+    "clsx": "^1.1.1",
+    "craco-raw-loader": "^1.0.1",
+    "eslint-plugin-markdown": "^2.0.0-rc.0",
+    "formik": "^2.1.5",
+    "moment": "^2.24.0",
+    "moment-timezone": "^0.5.28",
+    "nocache": "^2.1.0",
+    "prettier": "^2.0.4",
+    "raw-loader": "^4.0.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-favicon": "^0.0.18",
+    "react-input-mask": "^2.0.4",
+    "react-instantsearch-dom": "^6.5.0",
+    "react-loading": "^2.0.3",
+    "react-router": "^5.1.2",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "3.4.1",
+    "react-slick": "^0.27.10",
+    "react-styleguidist": "^11.0.8",
+    "react-uuid": "^1.0.2",
+    "slick-carousel": "^1.8.1",
+    "typescript": "~3.7.2",
+    "utility-types": "^3.10.0",
+    "yup": "^0.29.3"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-plugin-prettier": "^3.1.2",
+    "husky": "^3.1.0",
+    "lint-staged": "^10.2.11"
+  },
+  "optionalDependencies": {
+    "fsevents": "^2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "express": "node scripts/server.js",
+    "styleguide": "styleguidist server",
+    "styleguide:build": "styleguidist build",
+    "lint": "eslint --fix --max-warnings=-1  ./src --ext .js,.tsx,.ts -c ./.eslintrc.json",
+    "lint:staged": "eslint --fix -c ./.eslintrc.json"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,tsx,ts}": [
+      "yarn lint:staged",
+      "git add"
+    ]
+  },
+  "bit": {
+    "env": {
+      "compiler": "bit.envs/compilers/react-typescript@3.1.53"
+    },
+    "componentsDefaultDirectory": "components/{name}",
+    "packageManager": "yarn"
+  }
+}
